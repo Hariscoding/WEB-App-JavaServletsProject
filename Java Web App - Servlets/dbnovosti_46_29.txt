@@ -1,0 +1,66 @@
+create database dbnovosti_46_29;
+use dbnovosti_46_29;
+
+
+CREATE TABLE `korisnikinfo` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `telefon` varchar(45) NOT NULL,
+  `ime` varchar(45) NOT NULL,
+  `prezime` varchar(45) NOT NULL,
+  `uloga` varchar(10) NOT NULL DEFAULT 'user',
+  `status` varchar(20) DEFAULT 'aktivan',
+  PRIMARY KEY (`id`)
+);
+
+  
+  
+CREATE TABLE `novosti` (
+  `idnovosti` int NOT NULL AUTO_INCREMENT,
+  `naslov` varchar(45) DEFAULT NULL,
+  `autor` varchar(45) DEFAULT NULL,
+  `sadrzaj` mediumtext,
+  `slika` varchar(1000) DEFAULT NULL,
+  PRIMARY KEY (`idnovosti`)
+) ;
+
+CREATE TABLE `komentari` (
+  `komentarID` int NOT NULL AUTO_INCREMENT,
+  `sadrzaj` varchar(1000) DEFAULT NULL,
+  `ime` varchar(50) DEFAULT NULL,
+  `idnovosti` int,
+  PRIMARY KEY (`komentarID`),
+  FOREIGN KEY (idnovosti) references novosti(idnovosti)
+);
+
+
+//DEFAULTNI KORISNICI, ADMIN EDITOR I USER
+
+insert into korisnikinfo(username, password, email, telefon, ime, prezime, uloga) values ("editor", "editor", "editor", "editor","editor", "editor", "editor");
+insert into korisnikinfo(username, password, email, telefon, ime, prezime, uloga) values ("admin", "admin", "admin", "admin","admin", "admin", "admin");
+insert into korisnikinfo(username, password, email, telefon, ime, prezime, uloga) values ("user", "user", "user", "user","user", "user", "user");
+
+
+//DEFAULTNE VIJESTI - da stranica ne bi bila prazna
+insert into novosti(naslov, autor, sadrzaj, slika) values ("Ovo je naslov", "Alem Hodzic", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dui sapien, iaculis nec quam id, molestie feugiat purus. Phasellus convallis neque vitae condimentum dictum. Suspendisse ut metus odio. Donec vehicula odio porttitor, blandit orci ac, rutrum mi. Fusce lorem magna, egestas sit amet sapien quis, finibus tempor tortor. Sed eu nisl venenatis, efficitur mauris vel, sagittis tellus. Aenean eu tempus massa.
+
+Quisque nisl sapien, ultrices ac justo a, tempor hendrerit neque. Curabitur congue enim mauris, et ullamcorper arcu congue nec. Nunc ornare at nisi in sagittis. Morbi pulvinar volutpat velit ut tincidunt. Nam venenatis ut eros a tempus. Vestibulum eu est ut sem posuere finibus. Phasellus dapibus lectus lacus, id sodales lectus aliquet in. Nam euismod consectetur arcu, sed finibus elit finibus in. In vitae tristique ligula.
+
+Quisque a aliquet ex, quis euismod lorem. Praesent malesuada lectus in velit volutpat molestie. Duis tellus ipsum, sagittis vitae purus quis, imperdiet pretium erat. Sed a euismod erat. Cras eu congue est, sit amet rhoncus lacus. Praesent porttitor metus in magna dapibus, in ultricies metus viverra. Cras eu vehicula ligula. Maecenas in molestie est, nec ultricies erat.
+
+ulla ornare sapien rutrum venenatis.", "https://tinyurl.com/yxsn4gnq");
+
+insert into novosti(naslov, autor, sadrzaj, slika) values ("Ovo je naslov 2", "Haris Hrustic", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dui sapien, iaculis nec quam id, molestie feugiat purus. Phasellus convallis neque vitae condimentum dictum. Suspendisse ut metus odio. Donec vehicula odio porttitor, blandit orci ac, rutrum mi. Fusce lorem magna, egestas sit amet sapien quis, finibus tempor tortor. Sed eu nisl venenatis, efficitur mauris vel, sagittis tellus. Aenean eu tempus massa.
+
+Quisque nisl sapien, ultrices ac justo a, tempor hendrerit neque. Curabitur congue enim mauris, et ullamcorper arcu congue nec. Nunc ornare at nisi in sagittis. Morbi pulvinar volutpat velit ut tincidunt. Nam venenatis ut eros a tempus. Vestibulum eu est ut sem posuere finibus. Phasellus dapibus lectus lacus, id sodales lectus aliquet in. Nam euismod consectetur arcu, sed finibus elit finibus in. In vitae tristique ligula.
+
+Quisque a aliquet ex, quis euismod lorem. Praesent malesuada lectus in velit volutpat molestie. Duis tellus ipsum, sagittis vitae purus quis, imperdiet pretium erat. Sed a euismod erat. Cras eu congue est, sit amet rhoncus lacus. Praesent porttitor metus in magna dapibus, in ultricies metus viverra. Cras eu vehicula ligula. Maecenas in molestie est, nec ultricies erat.
+
+ulla ornare sapien rutrum venenatis.", "https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png");
+
+
+
+  
+  

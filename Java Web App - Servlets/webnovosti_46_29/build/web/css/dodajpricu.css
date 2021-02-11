@@ -1,0 +1,144 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 14, 2020, 7:14:34 PM
+    Author     : korisnik
+*/
+
+
+*{
+    margin:0;
+    padding:0;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    user-select: none; 
+}
+:root {
+    --main-color: #014E88; 
+    --purple: #6653FF;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+h1{
+    margin: 10px;
+}
+
+#dodajpricu{
+    font-size:1.2rem;
+    cursor: pointer;
+    margin: 7px;
+    color: white;
+    background-color: var(--purple);
+    padding: 7px 11px;
+    outline: none;
+    border: none;
+    transition: 0.3s;
+}
+#dodajpricu:hover{
+    background-color: #2E219B;
+    
+}
+
+#bgscroll {
+    width: 250px;
+    height: 100px;
+    background-color: black;
+    position: fixed; 
+    top: 0px;
+    border-radius: 3px;
+    transform: translateX(-100%);
+    transition: 0.3s;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Orbitron", sans-serif;  
+
+    background:linear-gradient(45deg,#a499ff,#0f0180);
+ 
+} 
+:after,:before{
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    clear:both;
+} 
+a {
+      text-decoration:none;
+} 
+
+form {
+  line-height: 27px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+input[type="text"], input[type="number"] {
+  min-height: 25px;
+  min-width: 300px;
+  margin: 4px;
+  border-radius: 5px;
+  border:1px solid #cccccc;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#naslovid{
+    margin-top: 15px;
+}
+
+#main {
+  background-color: rgba(255,255,255,0.8);
+  text-align: center;
+  height: 80vh;
+  border-radius: 15px;
+  margin: 2% 10%;
+  overflow: auto;
+}
+
+#story {
+  padding: 0 3%;
+}
+
+#top {
+  background-color: rgb(255, 255, 255);
+  margin: 2% 10%;
+  border-radius: 15px;
+}
+
+#top img {
+  display: block;
+  width: 35%;
+  padding: 30px;
+  height: 250px;
+  margin: 0 auto;
+}
+
+.italics {
+  font-style: italic;
+}
+
+.word {
+  font-weight: bold;
+  text-decoration: underline;
+}
